@@ -1,7 +1,7 @@
 # .gitignore para el backend Node.js
 
 # Dependencias
-node_modules/
+node_modules
 
 # Archivos temporales
 *.log
