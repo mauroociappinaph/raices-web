@@ -1,0 +1,19 @@
+{
+  "name": "raices-webpage",
+  "version": "1.0.0",
+  "description": "Sitio web de emprendimiento raices productos organicos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mauroociappinaph/raices-web.git"
+  },
+  "author": "Mauro José Ciappina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mauroociappinaph/raices-web/issues"
+  },
+  "homepage": "https://github.com/mauroociappinaph/raices-web#readme"
+}
