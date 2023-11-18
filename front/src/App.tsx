@@ -1,14 +1,15 @@
-
-import './App.css'
-
+import "./App.css";
+import Form from "./componentes/Form";
+import Carrusel from "./componentes/Carrusel";
+import Footer from "./componentes/footer";
 function App() {
- 
-
   return (
     <>
-<h1 className=" text-3xl font-bold text-center">Hola</h1>
+      <Carrusel />
+      <Form />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

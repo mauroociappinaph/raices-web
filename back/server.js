@@ -1,6 +1,7 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -8,13 +9,19 @@ const port = process.env.PORT || 3001;
 // Configurar el middleware para analizar el cuerpo de las solicitudes
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors());
 
 // Ruta para manejar el formulario de contacto
 app.post('/contact', (req, res) => {
-  // Aquí debes implementar la lógica para enviar correos electrónicos usando nodemailer
-  // y manejar los datos del formulario (req.body).
+  // Obtener los datos del formulario desde el cuerpo de la solicitud
+  const { name, email, message } = req.body;
 
-  // Ejemplo de envío de correo electrónico
+  // Validar que se han proporcionado los datos necesarios
+  if (!name || !email || !message) {
+    return res.status(400).send('Faltan datos del formulario');
+  }
+
+  // Configurar el transporte de nodemailer para enviar correos electrónicos
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -23,21 +30,23 @@ app.post('/contact', (req, res) => {
     },
   });
 
+  // Configurar el contenido del correo electrónico
   const mailOptions = {
     from: 'tu_correo@gmail.com',
     to: 'destinatario@gmail.com',
-    subject: 'Asunto del Correo',
-    text: `Mensaje del formulario: ${req.body.message}`,
+    subject: 'Nuevo mensaje de formulario de contacto',
+    text: `Nombre: ${name}\nCorreo Electrónico: ${email}\nMensaje: ${message}`,
   };
 
+  // Enviar el correo electrónico
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error(error);
-      res.status(500).send('Error interno del servidor');
-    } else {
-      console.log('Correo enviado: ' + info.response);
-      res.status(200).send('Correo enviado correctamente');
+      return res.status(500).send('Error al enviar el correo electrónico');
     }
+
+    console.log('Correo electrónico enviado:', info.response);
+    return res.status(200).send('Correo electrónico enviado correctamente');
   });
 });
 
