@@ -1,0 +1,14 @@
+# .gitignore para el backend Node.js
+
+# Dependencias
+node_modules/
+
+# Archivos temporales
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# Otros archivos generados por el sistema
+.idea/
+.vscode/
