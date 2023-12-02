@@ -1,39 +1,42 @@
 import React from "react";
+import { FaInstagram } from "react-icons/fa";
 
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-gradient-to-r bg-color-yell via-[#bce1ff] to-gray-100">
-      <div className="max-w-screen-md px-4 py-16 mx-auto sm:px-6 lg:px-8 flex align-center justify-center ">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          <div>
-            <img src="url_del_logo" className="mr-5 h-6 sm:h-9" alt="logo" />
-            <p className="max-w-xs mt-4 text-sm text-gray-600">
+    <footer className="bg-gradient-to-r bg-color-yell via-[#bce1ff] to-gray-100 flex items-center">
+      <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 justify-center items-center">
+          {/* Logo y Descripción */}
+          <div className="flex flex-col items-center justify-center lg:items-start">
+            <img src="url_del_logo" className="mb-4 h-8 sm:h-12" alt="logo" />
+            <p className="max-w-md text-sm text-gray-600">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
               accusantium.
             </p>
-            <div className="flex mt-8 space-x-6 text-white">
-              <a
-                className="hover:opacity-75"
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span className="sr-only">Instagram</span>
-                <svg
-                  className="w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  {/* ... Icono de Instagram */}
-                </svg>
-              </a>
-            </div>
+          </div>
+
+          {/* Redes Sociales */}
+          <div className="flex items-center justify-center lg:justify-end mt-4 lg:mt-0 space-x-6 text-white">
+            <a
+              className="hover:opacity-75"
+              href="https://www.instagram.com/raices.productosorganicos/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="sr-only">Instagram</span>
+              <FaInstagram className="w-10 h-10" />
+            </a>
           </div>
         </div>
-        <p className="mt-8 text-xs text-gray-800">© 2022 Todos los derechos reservados</p>
+
+        {/* Derechos de Autor */}
+        <p className="mt-8 text-xs text-gray-800 text-center">
+          © {currentYear} Todos los derechos reservados.
+        </p>
       </div>
     </footer>
   );
