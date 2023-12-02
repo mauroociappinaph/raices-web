@@ -19,7 +19,7 @@ const Footer: React.FC<FooterProps> = () => {
             </p>
           </div>
 
-          {/* Redes Sociales */}
+          {/* Redes Sociales 
           <div className="flex items-center justify-center lg:justify-end mt-4 lg:mt-0 space-x-6 text-white">
             <a
               className="hover:opacity-75"
@@ -30,12 +30,12 @@ const Footer: React.FC<FooterProps> = () => {
               <span className="sr-only">Instagram</span>
               <FaInstagram className="w-10 h-10" />
             </a>
-          </div>
+          </div>*/}
         </div>
 
         {/* Derechos de Autor */}
         <p className="mt-8 text-xs text-gray-800 text-center">
-          © {currentYear} Todos los derechos reservados.
+          © {currentYear} Todos los derechos reservados.  
         </p>
       </div>
     </footer>
@@ -43,3 +43,4 @@ const Footer: React.FC<FooterProps> = () => {
 };
 
 export default Footer;
+
