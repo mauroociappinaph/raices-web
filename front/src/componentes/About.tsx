@@ -12,12 +12,11 @@ export default function About() {
         href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
       />
 
-      <div>
-        
+      <div className="md:bg-no-repeat md:bg-cover md:bg-center relative">
         <div>
           <div className="min-h-screen flex justify-center">
-            <div className="grid grid-cols-2 gap-4 items-center z-10">
-              <div className="max-w-lg text-center sm:text-left text-white">
+            <div className="md:grid md:grid-cols-2 md:gap-4 items-center z-10">
+              <div className="md:max-w-lg text-center sm:text-left text-white md:mr-4">
                 <h2 className="text-4xl font-bold tracking-tight">
                   Limoncellos Naturales y Caseros
                 </h2>
@@ -56,14 +55,14 @@ export default function About() {
                   </a>
                 </div>
               </div>
-              <div className="hidden lg:block relative mr-4">
-                <div className="swiper-container mt-6 h-96 w-80">
+              <div className="md:hidden relative mt-6">
+                <div className="swiper-container h-96">
                   <div className="swiper-wrapper">
                     <div className="swiper-slide">
                       <img
                         src="https://images.unsplash.com/photo-1606938704652-3e588c2c9fd4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80"
                         alt=""
-                        className="rounded-xl"
+                        className="rounded-xl w-full h-full object-cover"
                       />
                     </div>
                     {/* Agrega más slides según sea necesario */}
