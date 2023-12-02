@@ -3,8 +3,7 @@ import Img1 from "../assets/img1_files/05e13b182128017.6527ea421bcb6.jpg";
 
 const Hero: React.FC = () => {
   const containerStyle: React.CSSProperties = {
-    minHeight: '100vh',  // Mínimo alto de la pantalla
-    background: `url(${Img1}) center/cover no-repeat`,  // Configuración de la imagen de fondo
+    minHeight: '100vh',  
   };
 
   const textStyle: React.CSSProperties = {

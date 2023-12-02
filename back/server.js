@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3001;
 
-// Configurar el middleware para analizar el cuerpo de las solicitudes
+// SECTION -  Configurar el middleware para analizar el cuerpo de las solicitudes
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
@@ -16,7 +16,7 @@ app.post('/contact', (req, res) => {
   // Obtener los datos del formulario desde el cuerpo de la solicitud
   const { name, email, message } = req.body;
 
-  // Validar que se han proporcionado los datos necesarios
+ // SECTION - Validar que se han proporcionado los datos necesarios
   if (!name || !email || !message) {
     return res.status(400).send('Faltan datos del formulario');
   }
